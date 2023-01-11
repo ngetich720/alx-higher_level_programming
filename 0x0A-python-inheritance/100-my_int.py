@@ -1,13 +1,16 @@
 #!/usr/bin/python3
-""" Program that inherits from int class """
+"""Defines a Rectangle subclass Square."""
+Rectangle = __import__('9-rectangle').Rectangle
 
 
-class MyInt(int):
-    """ class MyInt that inherits from int """
-    def __eq__(self, other0);
-        """ equal (=) inverted """
-        return False
+class Square(Rectangle):
+    """Represent a square."""
 
-    def __ne__(self, other):
-        "not equal (!=) inverted """
-        return True
+    def __init__(self, size):
+        """Initialize a new square.
+        Args:
+            size (int): The size of the new square.
+        """
+        self.integer_validator("size", size)
+        super().__init__(size, size)
+        self.__size = size
